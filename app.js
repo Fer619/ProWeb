@@ -1,30 +1,14 @@
-// let obj = {};
+// función para llamar a la función greet con la función require 
+//aunque esta no tendra resultado se obtendra un ERROR
+//require('./greet');
 
-let persona = {
-    nombre: "Fernando",
-    apellido: "Briceño",
-    getName: function() {
-        return `${this.nombre} ${this.apellido}`
-    },
+//greet(); //se genera la llamada de la función greet en el archivo app.js
 
-    domicilio: {
-        calle: "Galicia #703",
-        colonia: "Villas Diamante",
-        cp: 28986,
-        municipio: "Villa de Alvarez",
-        getDomicilio: function() {
-            return `${this.calle} ${"Colonia:" + this.colonia} ${"CP:" + this.cp + ","} ${this.municipio}`
-        }
-    }
-}
+// ambas funciones generar un error al llamarlas con node app
 
-// Nota después de varios node app no cambiaban los valores fue necesario cambiar de terminal para corregir el error 
 
-//console.log(persona); // llama todos los valores del objeto persona
-//console.log(persona.nombre); // llama solo el valor nombre del objeto persona
-//console.log(persona.apellido); // lama solo el valor apellido del objeto persona.
-console.log(persona.getName()); // llama la función getName y regresa el nombre y apellidos juntos
-//console.log(persona.domicilio); // regresa solo los valores del objeto domicilio (calle, colonia, cp mun).
-console.log(persona.domicilio.getDomicilio());
+// nueva versión de la función para llamar a greet
+let greet = require('./greet');
+greet(); //sigue ocasionando un error debido a que sigue sin tener acceso a greet.
 
 
