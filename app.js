@@ -1,12 +1,26 @@
-var Emitter = require('./emitter');
+//var Emitter = require('./emitter');
+
+
+var Emitter = require('events');
+var config = require('events');
+// Nos regresa una cuenta de eventos que se realizo en este caso se hicieron dos, por otra parte las llamadas de greet se volvienron una función anonima
+// debido a que perdieron el acceso al documento o página emitter.
 
 var emtr = new Emitter();
 
-emtr.on('greet', () => {
+//emtr.on('greet', () => {
+  //  console.log('Somewhere, someone said hello.');
+//});
+
+emtr.on(config.events.GREET, () => {
     console.log('Somewhere, someone said hello.');
 });
 
-emtr.on('greet', () => {
+//emtr.on('greet', () => {
+    //console.log('A greeting occurred!');
+//});
+
+emtr.on(config.events.GREET, () => {
     console.log('A greeting occurred!');
 });
 
